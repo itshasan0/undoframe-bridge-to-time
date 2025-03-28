@@ -1,0 +1,121 @@
+/* ///////////////////////// Планшеты ///////////////////////// */
+@media screen and (min-width: 415px) and (max-width: 768px) {
+
+    .screen_one {
+        height: 83vw;
+    }
+
+    .border_line {
+        width: 142vw;
+        height: 77vw;
+        margin: 2vw 0 0 -20vw;
+    }
+
+    .border_line_min_right {
+        margin: 47vw 0 0 56vw;
+    }
+
+    .border_line_min_left {
+        margin: 47vw 0 0 25vw;
+    }
+
+    .second_screen {
+        width: 100vw;
+        height: 84vw;
+    }
+
+    .triangle_up {
+        width: 0;
+        height: 0;
+        border-left: 7vw solid transparent;
+        border-right: 7vw solid transparent;
+        border-bottom: 12vw solid red;
+        margin-left: 1.2vw;
+    }
+
+    
+    .triangle_down {
+        background-image: url(../img/Polygon.svg);
+        width: 16vw;
+        height: 11vw;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: 1vw 0 0 2vw;
+    }
+
+    .triangles {
+        width: 28vw;
+        height: 31vw;
+        padding: 4vw 0 0 1vw;
+    }
+
+    .age_container {
+        padding: 4vw 0 0 0;
+        margin: 21vw 0 0 29vw;
+    }
+
+    .ouside_elips {
+        margin: -41vw 0 0 38vw;
+    }
+
+    .old_person {
+        left: 9vw;
+    }
+
+    .arrow_red {
+        top: 27vw;
+        left: 82vw;
+    }
+
+    .triangles_out {
+        rotate: 90deg;
+        width: 29vw;
+        height: 36vw;
+        margin: 6vw 0 0 37vw;
+        background-image: url(../img/border_line_clock_outside.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding: 2vw 0 0 1.5vw;
+        margin-top: 3vw;
+    }
+
+
+
+    
+
+
+}
+
+
+/* ///////////////////////// Маленькие экраны ///////////////////////// */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+   
+}
+
+
+
+/* ///////////////////////// Средние экраны ///////////////////////// */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    /* Вертикальная ориентация для экранов от 1025px до 1366px */
+}
+
+
+
+/* ///////////////////////// Большие экраны ///////////////////////// */
+@media screen and (min-width: 1367px) and (max-width: 1920px) {
+    /* Вертикальная ориентация для экранов от 1367px до 1920px */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

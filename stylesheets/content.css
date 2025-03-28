@@ -1,0 +1,434 @@
+
+* { box-sizing: border-box; }
+
+body {
+   overflow-x: hidden;
+    overflow-y: hidden;
+    }
+
+@font-face {
+    font-family: "CarlaSansLight";
+    src: url("../fonts/CarlaSansLight.ttf") format("truetype");
+    font-style: Light;
+    font-weight: Light;
+    }
+
+.screen_one {
+    width: 100vw;
+    height: 60vw;
+    background-image: url(../img/background.svg);
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    position: relative;
+    }
+
+.border_line,
+.border_line_min_left,
+.border_line_min_right {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    pointer-events: none;
+    }
+
+.border_line {
+    background-image: url(../img/border_line.svg);
+    width: 97vw;
+    height: 49vw;
+    margin: 2vw 0 0 6vw;
+    }
+
+.border_line_min_left {
+    background-image: url(../img/border_line_min_left.svg);
+     width: 74vw;
+    height: 30vw;
+    margin: 11vw 0 0 6vw;
+    }
+
+.border_line_min_right {
+    background-image: url(../img/border_line_min_right.svg);
+    width: 74vw;
+    height: 30vw;
+    margin: 14vw 0 0 73vw;
+    }
+
+.border_line_min_left p, 
+.border_line_min_right p {
+    width: 19vw;
+    height: 28vw;
+    color: #FFF;
+    font-family: "Pixelify Sans";
+    font-size: 1.8vw;
+    padding: 1vw;
+    animation: blink-caret 0.75s step-end infinite;
+    }
+
+@keyframes blink-caret {
+     from, to { border-color: transparent }
+    50% { border-color: #333; }
+    }
+
+.undoframe {
+    color: #FFF;
+    font-family: "Pixelify Sans";
+    font-size: 4vw;
+    width: 23vw;
+    height: 8vw;
+    border-radius: 30px;
+    background: #F00;
+    position: absolute;
+    top: 21vw;
+    left: 39vw;
+    z-index: 10;
+    cursor: pointer;
+    pointer-events: auto;
+    }
+
+.container {
+    position: relative;
+    width: 50vw;
+    height: 50vw;
+    margin: 0 0 0 25vw;
+    pointer-events: none;
+    }
+       
+.rectangle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    border: 5px solid white;
+    transition: transform 0.5s ease-in-out;
+    }
+
+.second_screen {
+    width: 100vw;
+    height: 60vw;
+    background-image: url(../img/background.svg);
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    display: none;
+    }
+
+.triangles_out {
+    width: 19vw;
+    height: 29vw;
+    margin: 8vw 0 0 10vw;
+    background-image: url(../img/border_line_clock_outside.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 2vw 0 0 1.5vw;
+    margin-top: 3vw;
+}
+
+.triangles {
+    width: 16vw;
+    height: 29vw;
+    background-image: url(../img/border_line_clock_inside.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 1vw 0 0 1vw;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.triangles.zoomed {
+    transform: scale(1.3);
+}
+    
+.triangle_down {
+    background-image: url(../img/Polygon.svg);
+    width: 14vw;
+    height: 9vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 1vw 0 0 2vw;
+}
+
+.triangle_up {
+    width: 0;
+    height: 0;
+    border-left: 5vw solid transparent;
+    border-right: 5vw solid transparent;
+    border-bottom: 10vw solid red;
+    margin-left: 2.2vw;
+}
+
+.age_container {
+    width: 34vw;
+    height: 13vw;
+    display: flex;
+    margin: 2vw 0 0 0;
+}
+
+.age_img {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(0.95);
+    transition: opacity 1.5s ease-in-out, filter 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.age_img.active {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+}
+
+.big {
+    background-image: url(../img/big.svg);
+    width: 21vw;
+    height: 18vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 3vw;
+}
+
+.teen {
+    background-image: url(../img/teen.svg);
+    width: 16vw;
+    height: 15vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 2vw 0 0 0;
+}
+
+.child {
+    background-image: url(../img/child.svg);
+    width: 8vw;
+    height: 11vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 8vw 0 0 0;
+}
+
+.todler {
+    background-image: url(../img/todler.svg);
+    width: 6vw;
+    height: 9vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 11vw 0 0 0;
+}
+
+.ouside_elips {
+    background-image: url(../img/border_line_round_outside.svg);
+    width: 29vw;
+    height: 29vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -37vw 0 0 37vw;
+    position: absolute;
+}
+
+.inside_elips {
+    background-image: url(../img/border_line_round_inside.svg);
+    width: 24vw;
+    height: 24vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.elips {
+    width: 20vw;
+    height: 20vw;
+    border-radius: 13vw;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    cursor: pointer;
+}
+
+.arrow {
+    left: 50%;
+    top: 50%;
+    transform-origin: center; 
+    transition: transform 1s ease-in-out;
+    background-image: url(../img/arrow.svg);
+    width: 10vw;
+    height: 11vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 1vw 0 0 6vw;
+    transform-origin: 2vw 7vw;
+}
+
+.arrow_red {
+    width: 28vw;
+    height: 29vw;
+    position: absolute;
+    top: 1vw;
+    left: 82vw;
+}
+
+.arrow_red1 {
+    width: 10vw;
+    height: 10vw;
+    background-image: url(../img/arrow_red1.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.arrow_red2 {
+    width: 10vw;
+    height: 10vw;
+    background-image: url(../img/arrow_red2.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.arrow_red1, .arrow_red2 {
+    transition: transform 0.2s ease-out;
+}
+
+
+.old_person {
+    width: 28vw;
+    height: 29vw;
+    position: absolute;
+    top: 26vw;
+    left: 79vw;
+}
+
+.person_body {
+    width: 12vw;
+    height: 25vw;
+    background-image: url(../img/old.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.arms_move {
+    position: absolute;
+    width: 14vw;
+    height: 14vw;
+    background-image: url(../img/arms-move.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 6vw;
+    left: -2vw;
+}
+
+.beard_move {
+    width: 19vw;
+    height: 10vw;
+    background-image: url(../img/beard-move.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: -12vw 0 0 -4vw;
+    position: absolute;
+    top: 15vw;
+}
+
+@keyframes beard-move {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(3deg); }
+  }
+  
+  @keyframes arms-move {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(20deg); }
+  }
+  
+  .beard_move {
+    animation: beard-move 0.5s infinite ease-in-out;
+  }
+  
+  .arms_move {
+    animation: arms-move 1s infinite alternate ease-in-out;
+    transform-origin: top center;
+  }
+
+.third_screen {
+    width: 100vw;
+    height: 60vw;
+    background-image: url(../img/background.svg);
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+
+.more_time {
+    width: 45vw;
+    height: 45vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 10vw;
+    left: 31vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.more_container, .time_container {
+    display: flex;
+    width: 45vw;
+    height: 20vw;
+}
+
+.m, .o, .r, .e, .i, .t, .m2 , .e2{
+    width: 9vw;
+    height: 12vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.m, .m2 {
+    background-image: url(../img/m.svg);
+}
+
+.o {
+    background-image: url(../img/o.svg);
+}
+.r {
+    background-image: url(../img/r.svg);
+}
+.e, .e2 {
+    background-image: url(../img/e.svg);
+}
+.t {
+    background-image: url(../img/t.svg);
+}
+.i {
+    background-image: url(../img/i.svg);
+}
+
+
+.house_container {
+    width: 9vw;
+    height: 4vw;
+    border-radius: 1vw;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    top: 45vw;
+    left: 84vw;
+}
+
+.house {
+    background-image: url(../img/house.svg);
+    width: 3vw;
+    height: 5vw;
+    background-size: contain;
+    background-repeat: no-repeat;   
+}
+
+
